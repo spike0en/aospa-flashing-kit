@@ -16,7 +16,7 @@ Scripts to flash firmware and ROM on windows/mac/linux, including latest platfor
 ### Notes
 - `.cmd` scripts are for windows, can be run by right click -> run as administrator.
 - `.sh` scripts are for linux and mac, you should know how to use them!
-- Linux users must have 7zip preinstalled before using the script.
+- Users must have [7zip](https://www.7-zip.org/download.html) preinstalled before using the script.
 - The script is compatible with Windows 10 and higher only!
 - You may see warnings like `Warning: skip copying xyz image avb footer` while flashing firmware, this is normal and can be ignored safely.
 - The device will reboot automatically into "AOSPA Fastboot" (fastbootd) during ROM flash, this is normal and expected behaviour.

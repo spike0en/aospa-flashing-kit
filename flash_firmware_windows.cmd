@@ -5,21 +5,17 @@
 :: Author: Adithya R (@ghostrider_reborn)
 :: Modified by: Spike (@spike0en)
 
-if exist "%~dp0firmware.zip" (
-    set fw_zip=%~dp0firmware.zip
+if exist "%~dp0firmware.7z" (
+    set fw_zip=%~dp0firmware.7z
 ) else (
-    if exist "%~dp0firmware.zip.zip" (
-        set fw_zip=%~dp0firmware.zip.zip
-    ) else (
-        echo Error: firmware.zip not found!
-        goto :exit
-    )
+    echo Error: firmware.7z not found!
+    goto :exit
 )
 
 set fw_path=%~dp0firmware
 
-echo Extracting firmware.zip ...
-powershell Expand-Archive -Path '%fw_zip%' -DestinationPath '%fw_path%' -Force
+echo Extracting firmware.7z ...
+"%~dp07z.exe" x "%fw_zip%" -o"%fw_path%"
 
 set fastboot=%~dp0platform-tools-windows\fastboot.exe
 
@@ -36,7 +32,7 @@ set partitions=abl aop aop_config bluetooth cpucp devcfg dsp featenabler hyp ima
 ))
 
 echo:
-echo Completed succesfully!
+echo Completed successfully!
 
 :exit
 pause
