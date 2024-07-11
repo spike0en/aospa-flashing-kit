@@ -11,14 +11,14 @@ function wait_exit() {
     exit $1
 }
 
-# Firmware zip must be stored as firmware.zip
-if [ ! -f "firmware.zip" ]; then
-    echo "Error: firmware.zip not found, download and place it first."
+# Firmware zip must be stored as firmware.7z
+if [ ! -f "firmware.7z" ]; then
+    echo "Error: firmware.7z not found, download and place it first."
     wait_exit 1
 fi
 
-echo "Extracting firmware.zip..."
-unzip -o firmware.zip -d firmware
+echo "Extracting firmware.7z..."
+7z x firmware.7z -ofirmware
 
 partitions=(
     "abl"
