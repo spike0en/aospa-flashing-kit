@@ -23,8 +23,7 @@ powershell Expand-Archive -Path '%fw_zip%' -DestinationPath '%fw_path%' -Force
 
 set fastboot=%~dp0platform-tools-windows\fastboot.exe
 
-set partitions=abl aop aop_config bluetooth cpucp devcfg dsp featenabler hyp imagefv keymaster^
-    modem qupfw shrm tz uefi uefisecapp xbl xbl_config xbl_ramdump
+set partitions=abl aop aop_config bluetooth cpucp devcfg dsp featenabler hyp imagefv keymaster modem multiimgoem multiimgqti qupfw qweslicstore shrm tz uefi uefisecapp xbl xbl_config xbl_ramdump
 
 (for %%p in (%partitions%) do ( 
     echo:
